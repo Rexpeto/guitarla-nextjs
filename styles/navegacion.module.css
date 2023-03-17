@@ -1,0 +1,50 @@
+.navegacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .navegacion {
+        flex-direction: row;
+        margin-top: 0;
+    }
+}
+
+.navegacion a {
+    position: relative;
+    text-decoration: none;
+    color: #a0a0a0;
+    padding: 0 5px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.navegacion a::after {
+    content: "";
+    position: absolute;
+    background-color: #ffc;
+    height: 3px;
+    width: 0%;
+    left: 0;
+    bottom: -5px;
+    transition: 0.3s;
+}
+
+.navegacion a:hover {
+    color: white;
+}
+
+.navegacion a:hover::after {
+    width: 100%;
+}
+
+.navegacion a.active {
+    color: white;
+}
+
+.navegacion a::after.active {
+    width: 100%;
+}
