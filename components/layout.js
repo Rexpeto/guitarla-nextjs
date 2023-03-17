@@ -1,4 +1,6 @@
 import Head from "next/head";
+import Header from "./header";
+import Footer from "./footer";
 
 const Layout = ({ children, title = "", description = "" }) => {
     return (
@@ -10,8 +12,9 @@ const Layout = ({ children, title = "", description = "" }) => {
                     content={`GuitarLa - ${description}`}
                 />
             </Head>
-
+            <Header />
             {children}
+            <Footer />
         </>
     );
 };
