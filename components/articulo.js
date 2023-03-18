@@ -11,8 +11,8 @@ const Articulo = ({ articulo }) => {
             <Image
                 src={imagen?.data?.attributes?.formats?.small?.url}
                 alt={nombre}
-                width={400}
-                height={200}
+                width={200}
+                height={100}
             />
             <div className={styles.contenido}>
                 <h3 className={styles.titulo}>{nombre}</h3>
