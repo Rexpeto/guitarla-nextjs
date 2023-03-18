@@ -2,7 +2,6 @@ import Layout from "@/components/layout";
 import ListadoGuitarras from "@/components/listado-guitarras";
 
 const Tienda = ({ guitarras }) => {
-    console.log(guitarras);
     return (
         <Layout
             title="Tienda"
