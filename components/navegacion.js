@@ -17,16 +17,16 @@ const Navegacion = () => {
                 Blog
             </Link>
             <Link
-                href="/tienda"
-                className={route === "/tienda" ? styles.active : ""}
-            >
-                Tienda
-            </Link>
-            <Link
                 href="/nosotros"
                 className={route === "/nosotros" ? styles.active : ""}
             >
                 Nosotros
+            </Link>
+            <Link
+                href="/tienda"
+                className={route === "/tienda" ? styles.active : ""}
+            >
+                Tienda
             </Link>
         </nav>
     );
