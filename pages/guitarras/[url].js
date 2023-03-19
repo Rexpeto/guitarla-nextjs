@@ -5,7 +5,7 @@ import Image from "next/image";
 import "react-toastify/dist/ReactToastify.css";
 import styles from "@/styles/guitarra.module.css";
 
-const Guitarra = ({ guitarra }) => {
+const Guitarra = ({ guitarra, agregarCarrito }) => {
     const [cantidad, setCantidad] = useState(0);
     const { nombre, descripcion, precio, imagen } = guitarra?.attributes;
     const { url } = imagen?.data?.attributes?.formats?.small;
@@ -25,6 +25,9 @@ const Guitarra = ({ guitarra }) => {
             cantidad,
             imagen: url,
         };
+
+        agregarCarrito(guitarraSelect);
+        toast.success("Agregado con exito!!");
     };
 
     return (
