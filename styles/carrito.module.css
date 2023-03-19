@@ -1,0 +1,91 @@
+.contenido_resumen {
+    display: grid;
+    align-items: flex-start;
+    gap: 5rem;
+}
+
+@media (min-width: 768px) {
+    .contenido_resumen {
+        grid-template-columns: 3fr 2fr;
+    }
+}
+
+.resumen {
+    position: sticky;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 25%) 0px 2px 4px 0px;
+    border-radius: 8px;
+    transition: box-shadow 200ms ease-in-out 0s;
+}
+
+.resumen:hover {
+    box-shadow: rgb(0 0 0 / 20%) 0px 4px 5px 0px,
+        rgb(0 0 0 / 12%) 0px 3px 14px 3px, rgb(0 0 0 / 14%) 0px 8px 10px 1px;
+}
+
+.resumen h3 {
+    margin-top: 1rem;
+}
+
+.box_guitarra {
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    padding: 1rem;
+    background-color: white;
+    box-shadow: rgb(0 0 0 / 25%) 0px 2px 4px 0px;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    transition: box-shadow 200ms ease-in-out 0s;
+}
+
+.box_guitarra:hover {
+    box-shadow: rgb(0 0 0 / 20%) 0px 4px 5px 0px,
+        rgb(0 0 0 / 12%) 0px 3px 14px 3px, rgb(0 0 0 / 14%) 0px 8px 10px 1px;
+}
+
+.box_guitarra .imagen {
+    max-width: 120px;
+    margin: 0 auto;
+}
+
+.box_guitarra .nombre {
+    font-size: 3.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.box_guitarra .precio {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 2.2rem;
+}
+
+.cantidad {
+    width: 100%;
+    border-radius: 10px;
+    padding: 0 1rem;
+    outline: none;
+}
+
+.btn_eliminar {
+    position: absolute;
+    padding: 1.5rem 2rem;
+    background-color: red;
+    color: #fff;
+    top: -0.8rem;
+    right: -1rem;
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn_eliminar:hover {
+    transform: rotate(180deg);
+}
