@@ -6,7 +6,7 @@ const Producto = ({ articulo, actualizarCantidad, eliminarProducto }) => {
     return (
         <div className={styles.box_guitarra}>
             <div className={styles.imagen}>
-                <Image src={imagen} width={120} height={40} />
+                <Image src={imagen} alt={nombre} width={120} height={40} />
             </div>
 
             <div>
