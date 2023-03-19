@@ -7,7 +7,7 @@ import styles from "@/styles/guitarra.module.css";
 
 const Guitarra = ({ guitarra }) => {
     const [cantidad, setCantidad] = useState(0);
-    const { nombre, descripcion, precio, imagen } = guitarra;
+    const { nombre, descripcion, precio, imagen } = guitarra?.attributes;
     const { url } = imagen?.data?.attributes?.formats?.small;
 
     const handleSubmit = (e) => {
@@ -16,6 +16,15 @@ const Guitarra = ({ guitarra }) => {
             toast.error("Coloque una cantidad");
             return;
         }
+
+        //* Construyendo el objecto
+        const guitarraSelect = {
+            id: guitarra.id,
+            nombre,
+            precio,
+            cantidad,
+            imagen: url,
+        };
     };
 
     return (
@@ -60,7 +69,7 @@ export const getServerSideProps = async ({ query: { url } }) => {
     const { data: guitarra } = await respuesta.json();
     return {
         props: {
-            guitarra: guitarra[0]?.attributes,
+            guitarra: guitarra[0],
         },
     };
 };
