@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 import Layout from "@/components/layout";
 import Image from "next/image";
+import "react-toastify/dist/ReactToastify.css";
 import styles from "@/styles/guitarra.module.css";
 
 const Guitarra = ({ guitarra }) => {
@@ -10,11 +12,15 @@ const Guitarra = ({ guitarra }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log("Enviando...");
+        if (cantidad < 1) {
+            toast.error("Coloque una cantidad");
+            return;
+        }
     };
 
     return (
         <Layout title={nombre} description="La mejor guitarra en venta">
+            <ToastContainer />
             <main className={`contenedor ${styles.guitarra}`}>
                 <div className={styles.imagen}>
                     <Image src={url} alt={nombre} width={200} height={100} />
