@@ -1,10 +1,18 @@
+import { useState } from "react";
 import Layout from "@/components/layout";
 import Image from "next/image";
-import styles from "../../styles/guitarra.module.css";
+import styles from "@/styles/guitarra.module.css";
 
 const Guitarra = ({ guitarra }) => {
+    const [cantidad, setCantidad] = useState(0);
     const { nombre, descripcion, precio, imagen } = guitarra;
     const { url } = imagen?.data?.attributes?.formats?.small;
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("Enviando...");
+    };
+
     return (
         <Layout title={nombre} description="La mejor guitarra en venta">
             <main className={`contenedor ${styles.guitarra}`}>
@@ -16,9 +24,14 @@ const Guitarra = ({ guitarra }) => {
                     <p className={styles.texto}>{descripcion}</p>
                     <p className={styles.precio}>{precio}</p>
 
-                    <form className={styles.formulario}>
+                    <form className={styles.formulario} onSubmit={handleSubmit}>
                         <label htmlFor="cantidad">Cantidad:</label>
-                        <select id="cantidad">
+                        <select
+                            id="cantidad"
+                            onChange={(e) =>
+                                setCantidad(parseInt(e.target.value))
+                            }
+                        >
                             <option value="0">-- Seleccione --</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
