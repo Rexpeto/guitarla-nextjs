@@ -2,7 +2,12 @@ import { useState, useEffect } from "react";
 import "@/styles/globals.css";
 
 export default function App({ Component, pageProps }) {
-    const [carrito, setCarrito] = useState([]);
+    const carritoLs =
+        typeof window !== "undefined"
+            ? JSON.parse(localStorage.getItem("carrito")) ?? []
+            : [];
+
+    const [carrito, setCarrito] = useState(carritoLs);
 
     useEffect(() => {
         localStorage.setItem("carrito", JSON.stringify(carrito));
